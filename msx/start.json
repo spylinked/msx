@@ -1,0 +1,54 @@
+{
+    "name": "Station X",
+    "version": "1.1.1",
+    "parameter": "content:http://github.io/spylinked/msx-kp/msx/start.json",
+    "action": "[settings:validate_links:0|home]",
+    "dictionary": "http://msxplayer.ru/assets/ru.json",
+    "pages": [
+      {
+        "items": [
+          {
+            "id": "description",
+            "type": "space",
+            "layout": "4,0,8,5",
+            "text": ""
+          },
+          {
+            "type": "control",
+            "layout": "0,0,4,1",
+            "image": "http://kpms.cc/logo512.png",
+            "label": "Kinopub TV",
+            "action": "link:http://kpms.cc/bootstrap.html",
+            "selection": {
+              "important": true,
+              "action": "update:content:description",
+              "data": {
+                "text": [
+                  "{txt:msx-white: Kinopub TV} — Неофициальная версия клиента Кинопаб. Если у вас проблема с этим клиентом, то не обращайтесь в тех. поддержку Кинопаба, а пишите в чат https://kpms.cc/chat"
+                ]
+              }
+            }
+          },
+          {
+            "type": "control",
+            "layout": "0,1,4,1",
+            "image": "http://msxplayer.ru/assets/msx-icon.png",
+            "label": "MSXPlayer",
+            "action": "execute:http://msxplayer.ru/msx/get-start-action",
+            "data": {
+              "referer": "2117.gms.ovh"
+            },
+            "selection": {
+              "important": true,
+              "action": "update:content:description",
+              "data": {
+                "text": [
+                  "{txt:msx-white: MSXPlayer} — В этом плейлисте собраны все самые лучшие ссылки для твоего телевизора"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
